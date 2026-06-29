@@ -2,7 +2,7 @@ library(yaml)
 library(fs)
 
 # ---------------------------
-# Helpers
+# Helper
 # ---------------------------
 
 read_meta <- function(file) {
