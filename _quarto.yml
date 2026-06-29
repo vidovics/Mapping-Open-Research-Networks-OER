@@ -19,6 +19,7 @@ website:
       - text: "Site map"
         href: Site_map.qmd
       - text: "Units"
+        menu:
         - text: "Introduction"
           href: Intro-networks/intro-learning_outcomes.qmd
         - text: "Setting up R"
