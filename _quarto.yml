@@ -14,16 +14,20 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Introduction"
-        href: Intro-networks/intro-learning_outcomes.qmd
-      - text: "Setting up R"
-        href: R_setup/R-learning_outcomes.qmd
-      - text: "Code-along"
-        href: Code-along/code-learning_outcomes.qmd
-      - text: "Describing networks"
-        href: Theory/theory-learning_outcomes.qmd
       - text: "About"
         href: about.qmd
+      - text: "Site map"
+        href: Site_map.qmd
+      - text: "Units"
+        - text: "Introduction"
+          href: Intro-networks/intro-learning_outcomes.qmd
+        - text: "Setting up R"
+          href: R_setup/R-learning_outcomes.qmd
+        - text: "Code-along"
+          href: Code-along/code-learning_outcomes.qmd
+        - text: "Describing networks"
+          href: Theory/theory-learning_outcomes.qmd
+
     right:
       - href: index.qmd
         text: "![](/images/UoS_brand.png)"
