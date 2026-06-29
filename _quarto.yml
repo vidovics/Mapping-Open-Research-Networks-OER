@@ -1,0 +1,62 @@
+project:
+  type: website
+  output-dir: docs   # required for GitHub Pages
+
+execute:
+  warning: false
+  message: false
+  freeze: auto       # speeds up rebuilds for teaching
+
+website:
+  title: "Open Research Networks"
+  site-url: https://your-username.github.io/your-repo-name/
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Introduction"
+        href: Intro-networks/intro-learning_outcomes.qmd
+      - text: "Setting up R"
+        href: R_setup/R-learning_outcomes.qmd
+      - text: "Code-along"
+        href: Code-along/code-learning_outcomes.qmd
+      - text: "Describing networks"
+        href: Theory/theory-learning_outcomes.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - href: index.qmd
+        text: "![](/images/UoS_brand.png)"
+        aria-label: "University of Southampton"
+
+
+  page-footer:
+    left: Except where otherwise noted, content is licensed under 
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+    right:       
+          - icon: github
+            href: https://github.com/your-username/your-repo-name
+
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-overflow: wrap
+    citeproc: true
+
+
+knitr:
+  opts_chunk:
+    fig.width: 8
+    fig.align: center
+    setup: |
+      source("_common.R") 
+
+
+editor: visual

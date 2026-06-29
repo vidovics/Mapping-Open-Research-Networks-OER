@@ -1,0 +1,35 @@
+---
+title: "Mapping Open Research Networks"
+format: html
+editor: visual
+---
+## An OER for Network Analysis on Open Research Practices and Infrastructures
+### Purpose
+
+This training has been developed for the *Pockets of excellence or excellent networks?* session at the UK Reproducibility Network conference 9th July 2026. The course materials have been developed to be used by a trainer in a linear way, but they may also be used as a self-paced asynchronous learning object.
+
+This training introduces network analysis as a practical tool for understanding how people, groups, and services interact within an organisation. It is particularly useful for identifying collaboration patterns, gaps, and opportunities to strengthen open research practices. This exercise can be carried out at any research organisation to map open research practices and collaborative efforts to embed them into research culture.
+
+### Learning Outcomes
+
+By the end of this training, learners will:
+
+-   understand what a network analysis is
+-   be able to confidently use key terminology to describe networks
+-   understand what data they require to perform a network analysis and prepare a dataset
+-   be able to set up R to perform network analysis, change display settings, and produce a reproducible report.
+
+In this training, you will produce a network analysis report for the fictional *University of Jelly*. This exercise mirrors real-world institutional analysis and can be adapted for use in your own organisation. This has been pioneered at the University of Southampton: [10.5258/soton/p1266](https://doi.org/10.5258/soton/p1266) \>\>\>[Click here for the report](https://unisotonlibrary.github.io/Reproducible-and-Transparent-Research-Practices-Map/)
+
+### Audience
+
+This training is aimed at anyone with an interest in using network analyses to monitor and evaluate open research practices across an organisation. However, it has been compiled using open methods so that it can be repurposed and remixed. The training uses R packages for learners to code-along, some experience with R is ideal, but not necessary.
+
+### Modules
+
+The training combines short conceptual explanations with hands-on coding exercises, allowing you to build your understanding step-by-step.
+
+1.  [Introduction to network analysis](Intro-networks/intro-learning_outcomes.qmd "Introduction to network analysis module - start here")
+2.  [Setting up R for network analysis](R_setup/R-learning_outcomes.qmd "Setting up R for network analysis module - step 2 in the programme")
+3.  [Code-along exercise: the University of Jelly](Code-along/code-learning_outcomes.qmd "Code along network analysis exercise - step 3 in the programme")
+4.  [Describing networks](Theory/theory-learning_outcomes.qmd "Describing networks module - step 4 in the programme")

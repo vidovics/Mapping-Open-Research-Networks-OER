@@ -1,0 +1,33 @@
+---
+title: "About"
+format: html
+---
+### Site map
+[Site map](Site map.qmd)
+
+### Cite this work
+
+Cite this resource as:
+
+Vidovic, S.U. (2026) *Mapping Open Research Networks: An OER for Network Analysis on Open Research Practices and Infrastructures*. Available at: <https://unisotonlibrary.github.io/> .
+
+``` {.bib}
+@online{vidovic_2026,
+  author = {Vidovic, S.U.},
+  title = {Mapping Open Research Networks: An OER for Network Analysis on Open Research Practices and Infrastructures},
+  year = {2026},
+  url = {https://unisotonlibrary.github.io/},
+  note = {Accessed: 2026}
+}
+```
+
+### About this site
+
+This training has been developed for the *Pockets of excellence or excellent networks?* session at the UK Reproducibility Network conference 9th July 2026. The course materials have been developed to be used by a trainer in a linear way, but they may also be used as a self-paced asynchronous learning object. The programme is modular and can be used to meet the user's needs. This is an OER, so it may be remixed and reused to suit your needs.
+
+Unless otherwise stated, all content is licensed under a Creative Commons Attribution 4.0 (CC BY 4.0) licence. Copyright remains with the authors.
+
+
+### Statement on AI
+
+Generative AI was used in this project for refining drafts and generating examples, as well as debugging and troubleshooting code. The author has fully understood and reused the material generated using AI with full accountability.

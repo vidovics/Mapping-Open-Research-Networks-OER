@@ -1,0 +1,31 @@
+id,name,category,faculty_group,description,collaborate_with,engage_with,share_people_with
+j1,University of Jelly UKRN Local Network,Network,All,Community of practice promoting reproducibility journal clubs and institutional coordination,j2;j3;j10;j18;j19,j2;j3;j4;j5;j6;j7;j8;j9;j10;j11;j12;j28,j2;j18
+j2,Library Open Research Service,Infrastructure,Professional Services,Provides training on open access research data management and FAIR principles,j1;j8;j9;j13;j14;j15;j21,j1;j3;j4;j5;j6;j7;j10;j11;j12;j16;j25;j28,j1;j14;j15;j21
+j3,Research Office,Professional Services,Professional Services,Supports funding policy compliance and research integrity including open research mandates,j1;j2;j26;j29;j30,j1;j2;j5;j6;j8;j10;j26;j30,j29;j30
+j4,Institute of Sticky Data,Institute,Science,Develops FAIR data standards metadata frameworks and reproducible data pipelines,j8;j9;j15;j22,j1;j2;j6;j7;j10;j11;j15,j15;j8
+j5,Open Lab Practices Group,Research Group,Science,Implements electronic lab notebooks protocol sharing and reproducible lab workflows,j16;j17;j27;j9,j2;j9;j13;j16;j17;j27,j16
+j6,Digital Humanities Lab,Research Group,Humanities,Applies open tools and reproducible text analysis workflows in humanities,j18;j11;j2;j4,j2;j7;j11;j12;j18,j18
+j7,Policy Evidence and Transparency Unit,Research Group,Social Sciences,Supports open policymaking through reproducible evidence synthesis and data sharing,j19;j23;j8;j11,j2;j6;j8;j11;j23,j19
+j8,Enterprise Data Stewardship Unit,Enterprise,Professional Services,Implements institutional data governance frameworks and FAIR maturity assessment tools,j2;j4;j7;j13;j22;j15,j1;j2;j5;j7;j9;j15,j2;j15
+j9,Research Software Lab,Enterprise,Engineering,Provides research software engineering promotes reproducible code and version control,j2;j4;j5;j16;j17;j20;j27,j1;j2;j5;j8;j10;j17;j20,j20;j27
+j10,Institute for Reproducible Jelly,Institute,All,Conducts meta research and delivers reproducibility training across disciplines,j1;j4;j9;j11;j24,j1;j2;j5;j6;j7;j9;j11;j25,j11
+j11,Open Methods Institute,Institute,All,Develops training on preregistration replication studies and transparent workflows,j4;j6;j7;j10;j23,j1;j2;j6;j7;j10;j23,j10
+j12,Creative Jelly Arts Practice,Research Group,Arts,Explores open creative practice and alternative research outputs including open licensing,j6;j21,j2;j6;j7;j21,
+j13,Jelly Data Repository Team,Infrastructure,Professional Services,Manages institutional repository enabling FAIR data deposit and metadata enrichment,j2;j8;j16,j2;j5;j6;j7;j16;j25,j2
+j14,Scholarly Communications Team,Professional Services,Professional Services,Supports open access publishing rights retention and responsible metrics,j2;j1;j29;j24,j1;j2;j6;j10;j24,j2;j29
+j15,Metadata Innovation Group,Research Group,Science,Designs schema standards and persistent identifier integration for research outputs,j4;j8;j2;j22,j2;j4;j8;j10,j4
+j16,Computational Jelly Modelling Unit,Research Group,Science,Uses open code simulation and containerisation for reproducible computational research,j5;j9;j17;j13,j2;j5;j9;j13;j17,j5;j17
+j17,Reproducible AI Group,Research Group,Engineering,Focuses on reproducible machine learning workflows model transparency and auditability,j9;j16;j20,j2;j9;j10;j16;j20,j20
+j18,Open Monograph Collective,Research Group,Humanities,Develops open publishing models for long form scholarship and reproducible humanities workflows,j6;j2;j1,j2;j6;j11;j12,j6
+j19,Social Science Methods Hub,Research Group,Social Sciences,Supports preregistration surveys and reproducible quantitative and qualitative methods,j7;j23;j1,j2;j7;j11;j23,j7
+j20,Research Software Sustainability Group,Research Group,Engineering,Focuses on long term maintenance documentation and reuse of research software,j9;j17;j27,j2;j9;j10;j17,j9
+j21,Open Education Team,Professional Services,Professional Services,Develops open educational resources and training materials in open research,j2;j12;j25,j2;j6;j7;j12;j25,j2
+j22,FAIR Assessment Project,Project,Science,Evaluates FAIR maturity across departments and builds benchmarking tools,j4;j8;j15,j2;j4;j8,j8
+j23,Preregistration Support Service,Professional Services,Professional Services,Helps researchers design preregistered studies and registered reports,j11;j7;j19,j2;j7;j11;j19,j11
+j24,Open Peer Review Pilot,Project,All,Trials transparent peer review workflows across disciplines,j14;j10,j2;j10;j11;j14,j14
+j25,Data Carpentry at U of Jelly,Training,All,Workshops teaching reproducible data skills version control and scripting,j2;j9;j21,j2;j5;j6;j7;j10;j21,j2
+j26,UoJ Clinical Trials Unit,Infrastructure,Health,Supports transparent reporting and data sharing in clinical trials,j3;j8;j30,j2;j3;j7;j30,j3
+j27,Open Hardware Lab,Research Group,Engineering,Develops open hardware designs and documentation standards for reproducibility,j5;j9;j20,j2;j5;j9;j20,j9
+j28,Citizen Science Jelly Hub,Engagement,All,Engages public in open research data collection and co creation,j1;j2,j1;j2;j7;j12,j2
+j29,Responsible Metrics Group,Research Group,Professional Services,Promotes responsible research assessment and open metrics frameworks,j14;j3;j30,j2;j3;j10;j14,j3
+j30,Jelly Research Integrity Office,Professional Services,Professional Services,Ensures integrity reproducibility and ethical data practices across research,j3;j26;j29,j2;j3;j10;j11;j26,j3
