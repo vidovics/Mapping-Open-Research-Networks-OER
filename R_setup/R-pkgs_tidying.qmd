@@ -1,0 +1,36 @@
+---
+title: "Packages for Processing Data"
+format: html
+previous:
+  href: "R-loading_pkgs.qmd"
+  text: "Installing and Loading Packages"
+
+next:
+  href: "R-pkgs_networks.qmd"
+  text: "Packages for Network Analysis"
+---
+
+Data can be created directly in R (typically as data frames), or imported from external sources such as files, APIs, or web scraping. In this training, we will work with a `.csv` (comma-separated values) file and prepare it for analysis.
+
+Datasets are often not organised in a way that analysis tools expect, so they need to be cleaned and reorganised (“tidied”) before analysis.
+
+```{r, eval=FALSE}
+install.packages("readr") # readr - for importing data (e.g. reading .csv files)
+install.packages("tidyverse") # tidyverse - for cleaning, transforming, and organising data
+```
+
+These steps are essential for preparing data in a format that can be used to build a network. Install these now and a prompt will be given in the training when you need to load them (i.e. using `library()`).
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

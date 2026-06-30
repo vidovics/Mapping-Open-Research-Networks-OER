@@ -1,0 +1,44 @@
+---
+title: "What is a Network?"
+format: html
+previous:
+  href: "intro-learning_outcomes.qmd"
+  text: "Introduction to Network Analysis"
+
+next:
+  href: "intro-nodes_&_edges.qmd"
+  text: "Nodes and Edges"
+---
+
+*A network is a relational system of interconnected (and sometimes unconnected) actors*
+
+::: callout-note
+## Decoded:
+
+-   Relational system → studying how things connect, not just what exists
+-   Interconnected → linked through relationships
+-   Unconnected → not linked (this also matters!)
+-   Actors → people, groups, services, organisations (operational units)
+:::
+
+## Interactive Example: Southampton Map
+
+::: {=html}
+<iframe src="https://unisotonlibrary.github.io/Reproducible-and-Transparent-Research-Practices-Map/#interactive-network-graph" width="100%" height="600" style="border:none;">
+
+</iframe>
+:::
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

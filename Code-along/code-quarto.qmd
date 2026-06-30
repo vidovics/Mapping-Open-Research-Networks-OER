@@ -1,0 +1,111 @@
+---
+title: "Create a Report"
+format: html
+previous:
+  href: "code-data_vis.qmd"
+  text: "Data Visualisation"
+next:
+  href: "../index.qmd"
+  text: "Home"
+---
+
+We will now create a report containing your interactive network graph.
+
+## Create a Quarto Document
+
+In RStudio, go to:
+
+**File → New File → Quarto Document**
+
+-   Give your document a title  
+-   Add yourself as the author  
+-   Keep **HTML** selected  
+-   Keep **Knitr** as the engine  
+
+### YAML header
+
+The section at the top of the document, enclosed by dashes `---`, is the YAML header.
+
+This controls the document metadata and output.
+
+You can edit the title like this:
+
+``` {r, eval=FALSE}
+---
+title: "University of Jelly Network"
+format: html
+---
+```
+
+### Add content
+
+In the body of the document, you can add headings and text.
+
+Headings are created using hashtags:
+
+-   `#` Main title  
+-   `##` Section  
+-   `###` Subsection  
+
+For example:
+
+``` {r}
+## Summary
+```
+
+Add 2–3 sentences describing your network.
+
+
+### Add your network graph
+
+To insert your graph, create a code chunk:
+
+```` {r, eval=FALSE}
+```{r, echo=FALSE}
+# <YOUR CODE HERE>
+```
+````
+
+This will display the graph without showing the code.
+
+
+::: {.callout-note}
+## Optional: include code
+
+If you want to include your code in the report:
+
+-   Use `echo=TRUE` to show and run code  
+-   Use `eval=FALSE` to show code without running it  
+:::
+
+
+## Render Your Report
+
+Click **Render** in RStudio to generate your report.
+
+::: {.callout-note}
+## Output
+
+Your report should include:
+
+- a title  
+- a short summary (2–3 sentences)  
+- your interactive network graph  
+
+:::
+
+You have now created a reproducible network analysis report.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

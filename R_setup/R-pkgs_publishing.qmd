@@ -1,0 +1,39 @@
+---
+title: "Packages for Publishing"
+format: html
+previous:
+  href: "R-pkgs_visualisation.qmd"
+  text: "Packages for Data Visualisation"
+
+next:
+  href: "../index.qmd"
+  text: "Home"
+---
+
+Once analysis and visualisation are complete, the final step is to present the work in a clear and reproducible format.
+
+In this training, we will use Quarto to produce a report.
+
+::: callout-note
+Quarto is usually installed with RStudio. If you cannot open .qmd files, re-install RStudio or visit <https://quarto.org/docs/get-started/>
+:::
+
+Quarto will be used later in the training to:
+
+-   combine code, outputs, and narrative
+-   produce a structured report
+-   publish results in a reproducible format
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

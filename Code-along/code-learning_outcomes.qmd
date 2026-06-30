@@ -1,0 +1,39 @@
+---
+title: "Code-along exercise: the University of Jelly"
+format: html
+previous:
+  href: "../index.qmd"
+  text: "Home"
+next:
+  href: "code-loading.qmd"
+  text: "Load Packages and Data"
+---
+## Learning outcomes
+
+By the end of this unit, learners will have:
+
+-   loaded data
+-   prepared relationships
+-   built a network
+-   visualised it
+-   produced a short example report
+
+::: callout-note
+During this exercise you will produce a Quarto report (.qmd file) containing:
+
+title short interpretation (2–3 sentences) network graph
+:::
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

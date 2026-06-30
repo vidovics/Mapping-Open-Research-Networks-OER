@@ -1,0 +1,75 @@
+---
+title: "Create Network Graph"
+format: html
+previous:
+  href: "code-calculate.qmd"
+  text: "Calculate Network Measures"
+next:
+  href: "code-data_vis.qmd"
+  text: "Data Visualisation"
+---
+
+We can now visualise the network.
+
+There are different ways to plot network graphs depending on what you want to show.
+
+## Basic network graph
+
+The simplest way to view the network is to plot it directly:
+
+```{r, eval=FALSE}
+plot(g,
+     vertex.size = degree_centrality,
+     vertex.label.cex = 0.7,
+     edge.arrow.size = 0.2,
+     main = "Network graph")
+```
+
+This shows the network structure, with node size scaled by degree centrality.
+
+## Improving node labels
+
+Following this approach, node labels will use the index IDs, which can be difficult to interpret. Your dataset includes a column with descriptive labels `name`, so you can replace the IDs. To ensure labels are matched correctly to nodes, we explicitly map `input_data$id` to `input_data$name`.
+
+```{r, eval=FALSE}
+# Create lookup table (id → name)
+lookup <- input_data %>%
+  select(id, name) %>%
+  distinct()
+
+# Match graph node names to readable labels
+V(g)$label <- lookup$name[match(V(g)$name, lookup$id)]
+
+```
+
+Now replot your network graph.
+
+## Network with communities
+
+We can also detect and visualise communities within the network:
+
+```{r, eval=FALSE}
+communities <- cluster_walktrap(g)
+plot(communities, g, 
+     vertex.size = degree_centrality,
+     vertex.label.cex = 0.7,
+     edge.arrow.size = 0.2,
+     edge.curved = 0.2,
+     main = "UoJelly pockets of excellence for open and reproducible practices")
+```
+
+This highlights groups of nodes that are more closely connected to each other.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

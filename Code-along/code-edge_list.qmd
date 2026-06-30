@@ -1,0 +1,54 @@
+---
+title: "Create Edge List"
+format: html
+previous:
+  href: "code-prepare_data.qmd"
+  text: "Prepare Data"
+next:
+  href: "code-matrix.qmd"
+  text: "Create Adjacency Matrix"
+---
+
+From the prepared dataset (`Masterdata`), we can now extract the relationships between nodes.
+
+Edges (connections) are created as pairs of nodes, forming an **edge list**.
+
+Copy and paste the following into your R script, ensure the cursor is at the start of the chunk, and click run.
+
+```{r, eval=FALSE}
+# Create edge list from Masterdata
+edge_list <- Masterdata %>%
+  rowwise() %>%
+  mutate(targets = strsplit(relations, ";\\s*")) %>%
+  unnest(targets) %>%
+  filter(targets != "") %>%
+  distinct(df_IDs, targets)
+
+# Get all unique nodes
+nodes <- sort(unique(c(Masterdata$df_IDs, edge_list$targets)))
+
+```
+
+The object `edge_list` now contains all relationships as pairs of nodes.
+
+::: callout-note
+## Edge list
+
+An edge list is a table where each row represents a connection between two nodes (a dyad). This is a common format used for network analysis in R.
+:::
+
+From this structure, we can now create a matrix representation of the network.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

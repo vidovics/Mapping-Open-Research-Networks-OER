@@ -1,0 +1,72 @@
+---
+title: "Data Visualisation"
+format: html
+previous:
+  href: "code-graphs.qmd"
+  text: "Create Network Graph"
+next:
+  href: "code-quarto.qmd"
+  text: "Create Report"
+---
+
+We can now create an interactive network graph.
+
+The `visNetwork` package allows us to produce graphs with tooltips, labels, and interactive controls.
+
+```{r, eval=FALSE}
+library(visNetwork)
+
+
+# Create edges data frame for visNetwork
+edges_df <- data.frame(
+  from = edge_list$df_IDs,
+  to = edge_list$targets,
+  arrows = "to",  # Directed edges
+  stringsAsFactors = FALSE
+)
+
+# Function to insert <br> every N characters
+wrap_text <- function(text, width = 40) {
+  sapply(strwrap(text, width = width, simplify = FALSE), function(x) paste(x, collapse = "<br>"))
+}
+
+# Create nodes data frame for visNetwork
+nodes_df <- data.frame(
+  id = nodes,
+  label = input_data$name[match(nodes, input_data$id)],
+  title = wrap_text(paste0("<b>",input_data$name[match(nodes, input_data$id)],"</b><br>", input_data$description[match(nodes, input_data$id)])),
+  value = degree_centrality[match(nodes, names(degree_centrality))],
+  stringsAsFactors = FALSE
+)
+
+# Create interactive network graph with tooltips
+visNetwork(nodes_df, edges_df, width = "100%", height = "700px") %>%
+  visNodes(shape = "dot", scaling = list(min = 5, max = 50)) %>%
+  visEdges(arrows = "to", smooth = TRUE) %>%
+  visOptions(
+    highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE),
+    nodesIdSelection = list(enabled = TRUE, useLabels = TRUE)
+  ) %>%
+  visInteraction(hover = TRUE, tooltipDelay = 100) %>%
+  visLayout(randomSeed = 123) %>%
+  visPhysics(stabilization = TRUE)
+```
+
+-   The graph can be explored interactively\
+-   Hovering shows additional descriptive information
+
+This interactive graph will be used in your final report.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

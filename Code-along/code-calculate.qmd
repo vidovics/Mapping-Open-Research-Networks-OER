@@ -1,0 +1,66 @@
+---
+title: "Calculate Network Measures"
+format: html
+previous:
+  href: "code-matrix.qmd"
+  text: "Create Adjacency Matrix"
+next:
+  href: "code-graphs.qmd"
+  text: "Create Network Graph"
+---
+
+We can now calculate basic measures of the network structure.
+
+These measures help us understand how nodes are connected and which nodes are most central within the network.
+
+Copy and paste the following into your R script and run it:
+
+```{r, eval=FALSE}
+# Convert to igraph object
+g <- graph_from_adjacency_matrix(adj_matrix, mode = "directed", diag = FALSE)
+
+# Degree centrality
+degree_centrality <- degree(g, mode = "all")
+
+# Betweenness centrality
+betweenness_centrality <- betweenness(g)
+
+# Closeness centrality
+closeness_centrality <- closeness(g)
+
+# Print summary
+centrality_df <- data.frame(
+  Node = V(g)$name,
+  Degree = degree_centrality,
+  Betweenness = betweenness_centrality,
+  Closeness = closeness_centrality
+)
+
+print(centrality_df[order(-centrality_df$Degree), ])
+```
+
+The output shows the centrality values for each node in the network.
+
+::: callout-note
+## Centrality measures
+
+-   Degree: number of connections a node has
+-   Betweenness: how often a node lies between other nodes
+-   Closeness: how close a node is to all others in the network
+:::
+
+These measures will be used to help interpret the network in later steps.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

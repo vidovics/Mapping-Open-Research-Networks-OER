@@ -1,0 +1,46 @@
+---
+title: "Packages for Data Visualisation"
+format: html
+previous:
+  href: "R-pkgs_networks.qmd"
+  text: "Packages for Network Analysis"
+
+next:
+  href: "R-pkgs_publishing.qmd"
+  text: "Packages for Publishing"
+---
+
+After analysing and structuring the network data, the next step is to visualise it.
+
+The following package should be installed and loaded:
+
+```{r, eval=FALSE}
+install.packages("visNetwork")   # for creating interactive network graphs
+```
+
+::: callout-note
+## Other tools
+
+There are other packages for network visualisation in R (e.g. `ggraph`, `ggplot2`), but in this training we focus on `visNetwork` for its interactive capabilities.
+:::
+
+`visNetwork` will be used later in the training to:
+
+-   produce network graphs
+-   customise how nodes and edges are displayed
+-   add labels and styling
+-   enable interactivity (e.g. hover information and exploration)
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

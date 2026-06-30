@@ -1,0 +1,41 @@
+---
+title: "Packages for Network Analysis"
+format: html
+previous:
+  href: "R-pkgs_tidying.qmd"
+  text: "Packages for Processing Data"
+
+next:
+  href: "R-pkgs_visualisation.qmd"
+  text: "Packages for Data Visualisation"
+---
+
+After data has been imported and tidied, it needs to be structured so that relationships can be analysed.
+
+The following packages should be installed and loaded:
+
+```{r, eval=FALSE}
+install.packages("sna")      # provides additional social network analysis measures
+install.packages("igraph")   # provides functions for analysing network structures
+install.packages("tidygraph")  # for working with network data in a tidy format
+```
+
+These packages will be used later in the training to:
+
+-   analyse relationships between nodes
+-   calculate basic network measures
+-   prepare data for visualisation
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

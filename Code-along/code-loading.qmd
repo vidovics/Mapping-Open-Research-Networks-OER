@@ -1,0 +1,48 @@
+---
+title: "Load Packages and Data"
+format: html
+previous:
+  href: "code-learning_outcomes.qmd"
+  text: "Learning Outcomes"
+next:
+  href: "code-prepare_data.qmd"
+  text: "Prepare Data for Edges"
+---
+
+You can either paste chunks of code into the RStudio console, or paste it into a R script file and click run to run each line. You can put chunks into parentheses `{}` and it will run the whole chunk in sequence when you click run.
+
+Copy and run the following in RStudio to load your packages:
+
+```{r, eval=FALSE}
+library(sna)
+library(readr)
+library(igraph)
+library(tidyverse)
+library(tidygraph)
+library(visNetwork)
+```
+
+To simulate using your own dataset, [download this .csv](ADD%20LINK) to your local directory or build a csv and save it using the sample data linked in the index.
+
+Now you can use the following command which uses `readr` to choose the file from your directory and open it into R.
+
+```{r, eval=FALSE}
+# Bring the dataset into R as a dataframe
+input_data<-read.csv(file.choose())
+```
+
+The contents of your .csv file will now be stored as an object called `input_data` and can be viewed in the "Environment" tab. You should see that there are 30 observations and 8 variables in the shared example.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

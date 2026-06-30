@@ -1,0 +1,230 @@
+---
+title: "Network Structure"
+format: html
+previous:
+  href: "theory-learning_outcomes.qmd"
+  text: "Learning Outcomes"
+next:
+  href: "theory-degree.qmd"
+  text: "Centrality"
+---
+
+This section introduces ways of describing the structure of a network.
+
+Understanding structure helps us interpret how nodes are connected and how information or influence might flow.
+
+### Structural holes
+
+A structural hole exists when two nodes (or groups) are not directly connected.
+
+A node that connects these otherwise unconnected parts of the network can act as a broker.
+
+-   brokers may control or mediate information\
+-   they can connect groups that would otherwise remain separate
+
+```{r, echo=FALSE, fig.height=3}
+library(igraph)
+
+set.seed(42)
+
+# Create two clusters
+cluster1 <- make_full_graph(4)
+cluster2 <- make_full_graph(4)
+
+# Combine clusters
+g <- disjoint_union(cluster1, cluster2)
+
+# Add broker node (node 9)
+g <- add_vertices(g, 1)
+
+# Connect broker
+g <- add_edges(g, c(4, 9, 9, 5))
+
+# Layout
+layout <- layout_with_fr(g)
+layout[,2] <- layout[,2] * 0.5   # compress vertical space
+
+# Remove built-in labels
+V(g)$label <- ""
+
+# Colours
+V(g)$color <- "grey"
+V(g)$color[1:4] <- "lightblue"
+V(g)$color[5:8] <- "lightgreen"
+V(g)$color[9]   <- "tomato"
+
+# Plot
+par(mar = c(1.5, 1.5, 1.5, 1.5))
+
+plot(g,
+     layout = layout,
+     vertex.size = 8,
+     vertex.label = V(g)$label,
+     edge.width = 2,
+     asp = 0,
+     main = "Structural Hole with Broker")
+
+# ---- LABEL PLACEMENT ----
+
+
+bx <- layout[9, 1]
+by <- layout[9, 2]
+
+# Graph centre
+center <- colMeans(layout)
+
+# Direction: from centre → broker
+dx <- bx - center[1]
+dy <- by - center[2]
+
+# Normalize
+len <- sqrt(dx^2 + dy^2)
+dx <- dx / len
+dy <- dy / len
+
+# Scale relative to layout spread
+xrange <- diff(range(layout[,1]))
+yrange <- diff(range(layout[,2]))
+
+offset_scale <- 0.15 * min(xrange, yrange)
+
+label_x <- bx + dx * offset_scale
+label_y <- by + dy * offset_scale
+
+text(label_x, label_y,
+     labels = "Broker",
+     col = "black",
+     cex = 1,
+     font = 2)
+
+```
+
+::: callout-note
+Brokers aren’t necessarily the most connected — they are the most strategically positioned.
+:::
+
+These two clusters are not directly connected. The only way information can pass between them is through the broker which acts as a connecting tie between two otherwise disconnected parts of the network. It is possible to have two reciprocal brokers with a bridging tie.
+
+### Bridging ties
+
+Bridging ties are connections that link different parts of a network.
+
+These ties are often:
+
+-   less frequent or weaker\
+-   but important for connecting otherwise separate groups
+
+Bridging ties help networks become more connected overall.
+
+```{r, echo=FALSE, fig.height=3}
+library(igraph)
+
+set.seed(42)
+
+# Create two clusters
+cluster1 <- make_full_graph(4)
+cluster2 <- make_full_graph(4)
+
+# Combine clusters
+g <- disjoint_union(cluster1, cluster2)
+
+# Add bridging tie
+g <- add_edges(g, c(4, 5))
+
+# Layout
+layout <- layout_with_fr(g)
+layout[,2] <- layout[,2] * 0.5
+
+V(g)$label <- ""
+
+# Colour nodes
+V(g)$color <- ifelse(V(g) <= 4, "lightblue", "lightgreen")
+
+# Identify bridging edge
+edge_ends <- ends(g, E(g), names = FALSE)
+
+bridge_edge <- which(
+  (edge_ends[,1] == 4 & edge_ends[,2] == 5) |
+  (edge_ends[,1] == 5 & edge_ends[,2] == 4)
+)
+
+# Style edges
+E(g)$color <- "grey80"
+E(g)$width <- 1
+E(g)$color[bridge_edge] <- "red"
+E(g)$width[bridge_edge] <- 4
+
+# Plot
+par(mar = c(1.5, 1.5, 1.5, 1.5))
+
+plot(g,
+     layout = layout,
+     vertex.size = 30,
+     vertex.label = V(g)$label,
+     edge.width = E(g)$width,
+     edge.color = E(g)$color,
+     main = "Bridging Tie Between Two Clusters")
+
+# ---- LABEL PLACEMENT ----
+
+coords <- layout[c(4, 5), ]
+
+mid_x <- mean(coords[,1])
+mid_y <- mean(coords[,2])
+
+dx <- coords[2,1] - coords[1,1]
+dy <- coords[2,2] - coords[1,2]
+
+offset_x <- -dy
+offset_y <- dx
+
+# Normalize
+len <- sqrt(offset_x^2 + offset_y^2)
+offset_x <- offset_x / len
+offset_y <- offset_y / len
+
+# ---- SCALE-AWARE OFFSET ----
+usr <- par("usr")
+xrange <- usr[2] - usr[1]
+yrange <- usr[4] - usr[3]
+offset_scale <- 0.05 * min(xrange, yrange)
+
+label_x <- mid_x + offset_x * offset_scale
+label_y <- mid_y + offset_y * offset_scale
+
+text(label_x, label_y,
+     labels = "Bridging tie",
+     col = "red",
+     cex = 1,
+     font = 2)
+```
+
+### Density
+
+Density describes how connected a network is overall.
+
+It is calculated as:
+
+-   the number of actual connections\
+
+-   divided by the number of possible connections
+
+-   High density → many connections\
+
+-   Low density → fewer connections
+
+Dense networks tend to be more tightly connected.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

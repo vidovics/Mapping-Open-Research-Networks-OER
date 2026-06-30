@@ -1,0 +1,75 @@
+---
+title: "Centrality"
+format: html
+previous:
+  href: "theory-structure.qmd"
+  text: "Network Structure"
+next:
+  href: "theory-describe.qmd"
+  text: "Describing Networks"
+---
+
+Centrality measures help identify which nodes are most important or influential in a network.
+
+## Degree
+
+Degree is the number of connections a node has.
+
+-   higher degree = more connections\
+-   lower degree = fewer connections
+
+### In-degree
+
+In directed networks, in-degree counts how many connections are directed *towards* a node.
+
+This can indicate:
+
+-   attention\
+-   citations\
+-   incoming communication
+
+### Out-degree
+
+Out-degree counts how many connections a node sends *to others*.
+
+This can indicate:
+
+-   activity\
+-   outreach\
+-   influence
+
+### Degree centrality
+
+Degree centrality is a simple measure of how connected a node is relative to others in the network.
+
+Nodes with high degree centrality are often described as:
+
+-   well-connected\
+-   visible within the network
+
+However, being highly connected does not necessarily mean a node is strategically important.
+
+## Betweenness
+
+Betweenness measures how often a node lies between other nodes.
+
+Nodes with high betweenness can:
+
+-   act as bridges between groups\
+-   control or facilitate connections
+
+These nodes are often important even if they are not highly connected.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

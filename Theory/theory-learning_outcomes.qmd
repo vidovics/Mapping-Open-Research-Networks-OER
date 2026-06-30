@@ -1,0 +1,33 @@
+---
+title: "Describing Networks"
+format: html
+previous:
+  href: "../index.qmd"
+  text: "Home"
+next:
+  href: "theory-structure.qmd"
+  text: "Network Structure"
+---
+
+## Learning outcomes
+
+By the end of this unit, learners will be able to:
+
+-   describe key structural features of networks\
+-   explain how nodes differ in terms of connectivity and role\
+-   distinguish between different types of relationships (e.g. reciprocal, transitive)\
+-   interpret network structures using core concepts from network analysis
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

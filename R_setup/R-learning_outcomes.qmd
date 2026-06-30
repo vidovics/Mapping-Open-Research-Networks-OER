@@ -1,0 +1,34 @@
+---
+title: "Setting up R for Network Analysis"
+format: html
+previous:
+  href: "../index.qmd"
+  text: "Home"
+
+next:
+  href: "R-install_RStudio.qmd"
+  text: "Installing R and RStudio"
+---
+
+## Learning outcomes
+
+By the end of this unit, learners will be able to:
+
+-   set up R and RStudio for use\
+-   install and load required packages\
+-   recognise the role of packages across the workflow\
+-   prepare their environment for the training exercise
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

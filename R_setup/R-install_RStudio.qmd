@@ -1,0 +1,45 @@
+---
+title: "Installing R and RStudio"
+format: html
+previous:
+  href: "R-learning_outcomes.qmd"
+  text: "Setting up R"
+
+next:
+  href: "R-loading_pkgs.qmd"
+  text: "Installing and Loading Packages"
+---
+
+R is a programming language for data analysis and visualisation widely used in research, statistics, and reproducible workflows. R allows you to:
+
+-   clean and structure data
+-   perform analysis
+-   create plots and reports
+
+RStudio is effectively a workspace for working in R which makes creating and editing much easier.
+
+First install R:
+
+-   Go to: <https://cran.r-project.org>
+
+Then install RStudio:
+
+-   Go to: <https://posit.co/download/rstudio-desktop>
+
+::: callout-note
+Note, you may need permissions from your organisation to install these software if you are using a managed computer. R and RStudio are widely used and they may be available in your organisation's preapproved software centre.
+:::
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

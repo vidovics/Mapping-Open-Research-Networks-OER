@@ -1,0 +1,87 @@
+---
+title: "Dichotomous vs. Valued"
+format: html
+previous:
+  href: "intro-symmetric_vs_asymmetric.qmd"
+  text: "Symmetric vs. Asymmetric"
+
+next:
+  href: "../index.qmd"
+  text: "Home"
+---
+
+In addition to direction, ties can have weight. Dichotomous relationships are simply relationships that either exist or do not. Valued relationships are relationships with a weight, usually demonstrated by a thicker line.
+
+Weights might represent:
+
+-   number of collaborations\
+-   frequency of communication\
+-   amount of funding shared\
+-   number of shared staff or outputs
+
+| Feature     | Dichotomous   | Valued                   |
+|-------------|---------------|--------------------------|
+| Information | Tie or no tie | Strength of relationship |
+| Simplicity  | High          | More complex             |
+| Use case    | Structure     | Intensity / importance   |
+
+::: callout-note
+Valued ties add depth — they show not just *whether* a relationship exists, but *how much*.
+
+Valued ties have limitations which need to be acknowledged. Weighting decisions are made by the researcher, which means that valued networks always involve interpretation. Choices about how to measure and scale relationships can influence how the network appears - nuance can be lost.
+:::
+
+```{r, echo=FALSE}
+edges <- data.frame(
+  from = c(
+    "N1","N2","N3","N4","N5","N6",   # chains
+    "N2","N3"         # cross links
+  ),
+  to = c(
+    "N2","N3","N4","N5","N6","N1",   # chains
+    "N5","N6"         # cross links
+  ),
+  weight = c(
+    1, 1, 2, 1, 1, 2,  # consecutive links (weight 1)
+    0.5, 0.5 # additional ties
+  )
+)
+
+nodes <- data.frame(
+  name = paste0("N", 1:6),
+  label = paste("Node", 1:6)
+)
+
+library(igraph)
+library(ggraph)
+library(tidygraph)
+
+g <- graph_from_data_frame(edges, vertices = nodes, directed = FALSE)
+
+ggraph(as_tbl_graph(g), layout = "stress") +
+  geom_edge_link(aes(width = weight), alpha = 0.6) +
+  scale_edge_width(range = c(0.5, 3)) +
+  geom_node_point(size = 6) +
+  geom_node_text(aes(label = label), vjust = -1.5) +
+  theme_void()
+```
+
+::: callout-note
+## Tidbit
+
+Nodes can also be scaled. The scaled size of a node is less standardised though. Typically, it is the "popularity" of the node through different measures which determines the scale (but not necessarily). We will cover measures of popularity - degree centrality and in-degree - in a later unit.
+:::
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

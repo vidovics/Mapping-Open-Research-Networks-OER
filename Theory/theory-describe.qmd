@@ -1,0 +1,65 @@
+---
+title: "Describing Networks"
+format: html
+previous:
+  href: "theory-degree.qmd"
+  text: "Centrality"
+next:
+  href: "../index.qmd"
+  text: "Home"
+---
+
+We can describe networks not only by their structure, but also by the patterns of relationships within them.
+
+### Popularity
+
+Popularity refers to how frequently a node is connected to by others.
+
+This is often measured using:
+
+-   degree\
+-   or in-degree (in directed networks)
+
+Popular nodes are often highly visible in the network.
+
+### Reciprocity
+
+Reciprocity describes the extent to which relationships are mutual.
+
+In a directed network:
+
+-   A → B and B → A = reciprocal tie
+
+High reciprocity suggests:
+
+-   mutual relationships\
+-   two-way interactions
+
+### Transitivity
+
+Transitivity describes the tendency for connected nodes to form closed triangles.
+
+For example:
+
+-   if A is connected to B\
+-   and B is connected to C\
+-   then A is also likely to be connected to C
+
+High transitivity suggests:
+
+-   tightly connected groups\
+-   clustering or community structure
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

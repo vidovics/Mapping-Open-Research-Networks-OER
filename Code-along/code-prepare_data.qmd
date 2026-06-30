@@ -1,0 +1,87 @@
+---
+title: "Prepare Data for Edges"
+format: html
+previous:
+  href: "code-loading.qmd"
+  text: "Load Packages and Data"
+next:
+  href: "code-edge_list.qmd"
+  text: "Create Edge List"
+---
+
+You can define your IDs used to prepare an edge list for analysis using straight forward R commands (i.e. `df_IDs <- input_data$id`), but this script was written to help novices run the analysis without any additional coding. Create a new R script and paste the following:
+
+``` {r, eval=FALSE}        
+# define the IDs for the nodes from the list in the console
+{
+cat("Available columns:\n")
+print(names(input_data))
+ID_col <- readline(prompt = "Enter the name of the column containing the index IDs: ")
+}
+{
+if (!(ID_col %in% names(input_data))) {
+  stop("Column name not found. Please check spelling and try again.")
+}
+
+df_IDs <- input_data[[ID_col]]
+}
+
+Masterdata<-as.data.frame(df_IDs)
+```
+
+Ensure the cursor is at the head of the R script and click run. You should now be prompted to type the name of a listed column into the console to select which column is your node ID for constructing edges.
+
+We are using a complex dataset which we want to simplify for the purpose of this analysis. So now we are going to deduplicate and combine relationships recorded for each dyad. Paste the following script into your R file and run this part of the script, selecting all the columns you wish to combine, following the prompts.
+
+```{r, eval=FALSE}
+# Show column names and prompt the user to select all columns with relations
+{
+# Show available columns
+cat("Available columns:\n")
+print(names(input_data))
+
+# Prompt user to enter column names (comma-separated)
+relation_cols_input <- readline(prompt = "Enter one or more column names containing relation IDs (comma-separated): ")
+}
+{# Split and trim input into a vector of column names
+relation_cols <- strsplit(relation_cols_input, ",")[[1]] %>% trimws()
+
+# Validate column names
+invalid_cols <- setdiff(relation_cols, names(input_data))
+if (length(invalid_cols) > 0) {
+  stop(paste("Invalid column name(s):", paste(invalid_cols, collapse = ", ")))
+}
+
+# Combine values from selected columns row-wise
+df_relations <- input_data %>%
+  select(all_of(relation_cols)) %>%
+  unite("combined_relations", everything(), sep = "; ", na.rm = TRUE)
+}
+
+# Clean each row
+df_relations$cleaned_relations <- sapply(df_relations$combined_relations, function(x) {
+  # Split by semicolon
+  items <- unlist(strsplit(x, ";\\s*"))
+  
+  # Remove empty strings and duplicates
+  items <- unique(items[items != ""])
+  
+  # Recombine into a single string
+  paste(items, collapse = "; ")
+})
+
+Masterdata$relations<-df_relations$cleaned_relations
+```
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

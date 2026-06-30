@@ -1,0 +1,49 @@
+---
+title: "Installing and Loading Packages"
+format: html
+previous:
+  href: "R-install_RStudio.qmd"
+  text: "Installing R and RStudio"
+
+next:
+  href: "R-pkgs_tidying.qmd"
+  text: "Packages for Processing Data"
+---
+
+R packages are add-ons that extend what R can do. They contain pre-written code, functions, and tools for specific tasks. The benefits of using packages are:
+
+-   you do not have to write everything from scratch
+-   work faster and more effectively
+-   your workflows are easier to reproduce
+
+In this training, we will be using packages to help reorganise and tidy data, to process network analyses, to produce clean, readable visualisations, and to produce a report.
+
+To install a package, either head to the packages tab in RStudio, find the package and use the intuitive user interface to install them, or use the following command in the console:
+
+```{r, eval=FALSE}
+install.packages()
+```
+
+The name of the package you want to install goes in quote marks inside the parentheses.
+
+To load the package into your session, you should use the following command in the console:
+
+```{r, eval=FALSE}
+library()
+```
+
+The name of the package goes into the parentheses, but does not need to be in quote marks.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

@@ -1,0 +1,52 @@
+---
+title: "Create Adjacency Matrix"
+format: html
+previous:
+  href: "code-edge_list.qmd"
+  text: "Create Edge List"
+next:
+  href: "code-calculate.qmd"
+  text: "Calculate Network Measures"
+---
+
+We can now convert the edge list into an adjacency matrix.
+
+An adjacency matrix records whether a relationship exists between each pair of nodes.
+
+Add the following to your R script and run it:
+
+```{r, eval=FALSE}
+# Create adjacency matrix
+adj_matrix <- matrix(0, nrow = length(nodes), ncol = length(nodes),
+                     dimnames = list(nodes, nodes))
+# Fill matrix with 1s for directed edges
+for (i in 1:nrow(edge_list)) {
+  from <- edge_list$df_IDs[i]
+  to <- edge_list$targets[i]
+  adj_matrix[from, to] <- 1
+}
+```
+
+The matrix now records the presence (1) or absence (0) of relationships between nodes.
+
+::: callout-note
+## Direction
+
+In this matrix, relationships are recorded as directed (from one node to another). In later steps, we will treat the network as undirected for analysis.
+:::
+
+From this matrix, we can now calculate network measures such as degree, betweenness, and closeness.
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

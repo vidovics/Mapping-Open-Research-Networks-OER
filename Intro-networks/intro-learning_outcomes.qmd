@@ -1,0 +1,35 @@
+---
+title: "Introduction to Network Analysis"
+format: html
+previous:
+  href: "../index.qmd"
+  text: "Home"
+
+next:
+  href: "intro-what_is_a_network.qmd"
+  text: "What is a Network"
+---
+## Learning Outcomes
+
+By the end of this unit, learners will be able to:
+
+-   explain what a network is and how it represents relationships
+-   describe networks using key terminology (nodes, edges, ties, dyads)
+-   differentiate between types of ties and relationships
+-   interpret basic network visualisations
+
+
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

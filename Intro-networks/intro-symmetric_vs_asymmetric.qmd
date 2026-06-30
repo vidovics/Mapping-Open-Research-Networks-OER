@@ -1,0 +1,133 @@
+---
+title: "Symmetric vs. Asymmetric"
+format: html
+previous:
+  href: "intro-dyad.qmd"
+  text: "The Dyad"
+
+next:
+  href: "intro-dichotomous_vs_valued.qmd"
+  text: "Dichotomous vs. Valued"
+---
+
+### Symmetric
+
+So far, we have been looking at **symmetric relationships**. These are dyads with ties which have **no direction** – i.e. the relationship is mutual.
+
+In a symmetric dyad:
+
+-   If Node A is connected to Node B,\
+-   then Node B is equally connected to Node A.
+
+Symmetric networks are often used when:
+
+-   the relationship is inherently mutual (e.g. collaboration)
+-   or when data is simplified into a **binary condition** (i.e. tie vs. no tie).
+
+#### Example: collaboration network
+
+```{r echo=FALSE, fig.height=2}
+library(igraph)
+library(ggraph)
+library(tidygraph)
+
+edges <- data.frame(
+  from = "N1",
+  to   = "N2"
+)
+
+nodes <- data.frame(
+  name = c("N1", "N2"),
+  label = c("Research Group A", "Research Group B")
+)
+
+g <- graph_from_data_frame(edges, vertices = nodes, directed = FALSE)
+
+ggraph(as_tbl_graph(g), layout = "linear") +
+  geom_edge_link(width = 1) +
+  geom_node_point(size = 6) +
+  geom_node_text(aes(label = label), vjust = -1.5, size = 4) +
+  theme_void()
+```
+
+::: callout-note
+## Jargon
+
+Other ways of describing symmetric relationships:
+
+-   mutual dyad\
+-   undirected ties\
+-   reciprocal relationship (in interpretation, though not always observed directly).
+:::
+
+### Asymmetric
+
+**Asymmetric relationships** introduce **direction**.
+
+In an asymmetric dyad, a tie goes *from one node to another*, but not necessarily in return:
+
+-   Node A → Node B **does not imply** Node B → Node A
+
+These are also known as **directed ties**, and are typically shown using arrows.
+
+Asymmetric networks are useful when relationships involve **flow, influence, or action**.
+
+::: callout-note
+Examples include:
+
+-   communication (who sends messages to whom)\
+-   citation networks (which paper cites another)\
+-   customer relationships\
+-   supervision or reporting structures
+:::
+
+#### Example: directed relationship
+
+```{r echo=FALSE, fig.height=2}
+
+
+edges <- data.frame(
+  from = "N1",
+  to   = "N2"
+)
+
+nodes <- data.frame(
+  name = c("N1", "N2"),
+  label = c("Sender", "Receiver")
+)
+
+g <- graph_from_data_frame(edges, vertices = nodes, directed = TRUE)
+
+ggraph(as_tbl_graph(g), layout = "linear") +
+  geom_edge_link(
+    arrow = arrow(length = unit(4, "mm")),
+    end_cap = circle(3, "mm")
+  ) +
+  geom_node_point(size = 6) +
+  geom_node_text(aes(label = label), vjust = -1.5, size = 4) +
+  theme_void()
+```
+
+::: callout-note
+## Jargon
+
+Other ways of describing asymmetric relationships:
+
+-   directed dyad\
+-   non-reciprocal tie\
+-   sender → receiver relationship\
+:::
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::

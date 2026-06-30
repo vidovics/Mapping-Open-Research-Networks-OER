@@ -1,0 +1,97 @@
+---
+title: "The Dyad"
+format: html
+previous:
+  href: "intro-nodes_&_edges.qmd"
+  text: "Nodes and Edges"
+
+next:
+  href: "intro-symmetric_vs_asymmetric.qmd"
+  text: "Symmetric vs. Asymmetric"
+---
+
+A dyad is the simplest unit of a network: a pair of nodes, either connected or not.
+
+#### A dyad with ties is a connected  pair of nodes.
+
+```{r echo=FALSE, fig.height=2}
+
+library(igraph)
+library(ggraph)
+library(tidygraph)
+
+# Define edges directly (clean and explicit)
+edges <- data.frame(
+  from = "N1",
+  to = "N2"
+)
+
+# Define nodes with labels
+nodes <- data.frame(
+  name = c("N1", "N2"),
+  label = c("Node 1", "Node 2")
+)
+
+# Build graph
+g <- graph_from_data_frame(edges, vertices = nodes, directed = FALSE)
+graph <- as_tbl_graph(g)
+
+ggraph(graph, layout = "linear") +
+  geom_edge_link(aes(label = "Edge"), angle_calc = "along", label_dodge = unit(2, "mm")) +
+  geom_node_point(size = 6) +
+  geom_node_text(aes(label = label),vjust = -1.5, size = 4) +
+  coord_cartesian(clip = "off")+
+  theme_void()+
+  theme(
+    
+    plot.background = element_rect(colour = "black", fill = "white", linewidth = 0.5),
+    plot.margin = margin(5, 5, 5, 5)
+
+  )
+```
+
+#### A null dyad are nodes with no connection.
+
+```{r echo=FALSE, fig.height=2}
+
+# Empty edges
+edges <- data.frame(
+  from = character(0),
+  to = character(0)
+)
+
+# Define nodes
+nodes <- data.frame(
+  name = c("N1", "N2"),
+  label = c("Node 1", "Node 2")
+)
+
+# Build graph with no edges
+g <- graph_from_data_frame(edges, vertices = nodes, directed = FALSE)
+graph <- as_tbl_graph(g)
+
+ggraph(graph, layout = "linear") +
+  geom_node_point(size = 6) +
+  geom_node_text(aes(label = label), vjust = -1.5, size = 4) +
+  coord_cartesian(clip = "off") +
+  theme_void() +
+  theme(
+    plot.background = element_rect(colour = "black", fill = "white", linewidth = 0.5),
+    plot.margin = margin(5, 5, 5, 5)
+  )
+```
+
+------------------------------------------------------------------------
+
+::: nav-footer
+```{=html}
+<a href="{{< meta previous.href >}}" aria-label="Go to previous page: {{< meta previous.text >}}">
+  <span aria-hidden="true">«</span> {{< meta previous.text >}}
+</a>
+
+<a href="{{< meta next.href >}}" aria-label="Go to next page: {{< meta next.text >}}">
+  {{< meta next.text >}} <span aria-hidden="true">»</span>
+</a>
+```
+:::
+
