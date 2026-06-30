@@ -56,11 +56,11 @@ entry_html <- vapply(entry_qmd, to_html, character(1))
 
 output <- c(
   "---",
-  'title: "Site map"',
+  'title: "Site Map"',
   "format: html",
   "---",
   "",
-  "## Site Map",
+  "## Contents",
   ""
 )
 
