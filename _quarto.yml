@@ -41,7 +41,7 @@ website:
 
     right:       
           - icon: github
-            href: https://github.com/your-username/your-repo-name
+            href: href: https://github.com/${GITHUB_REPOSITORY}
 
 
 format:
