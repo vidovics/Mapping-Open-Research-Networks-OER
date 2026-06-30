@@ -55,7 +55,9 @@ jobs:
 
       # Render site
       - name: Render site
-        run: quarto render
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: quarto render
 
       # Upload built site
       - name: Upload site artifact
