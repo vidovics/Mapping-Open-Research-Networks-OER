@@ -22,7 +22,7 @@ library(tidygraph)
 library(visNetwork)
 ```
 
-To simulate using your own dataset, [download this .csv](.../2026_07_09_University_of_Jelly_Open_&_Reproducible_Practices.csv) to your local directory or build a csv and save it using the sample data linked in the index.
+To simulate using your own dataset, [download this .csv](../2026_07_09_University_of_Jelly_Open_&_Reproducible_Practices.csv) to your local directory or build a csv and save it using the sample data linked in the index.
 
 Now you can use the following command which uses `readr` to choose the file from your directory and open it into R.
 
