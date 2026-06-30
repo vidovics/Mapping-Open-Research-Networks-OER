@@ -1,5 +1,5 @@
 ---
-title: "Code-along exercise: the University of Jelly"
+title: "Code-Along Exercise: the University of Jelly"
 format: html
 previous:
   href: "../index.qmd"
