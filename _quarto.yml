@@ -40,8 +40,8 @@ website:
       [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
     right:       
-          - icon: github
-            href: href: https://github.com/${GITHUB_REPOSITORY}
+      - icon: github
+        href: href: https://github.com/${GITHUB_REPOSITORY}
 
 
 format:
