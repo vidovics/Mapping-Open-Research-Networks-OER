@@ -17,7 +17,7 @@ website:
       - text: "About"
         href: about.qmd
       - text: "Site map"
-        href: Site_map.qmd
+        href: Site map.qmd
       - text: "Units"
         menu:
         - text: "Introduction"
