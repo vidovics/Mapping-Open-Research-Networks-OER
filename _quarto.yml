@@ -9,7 +9,7 @@ execute:
 
 website:
   title: "Open Research Networks"
-  site-url: https://your-username.github.io/your-repo-name/
+  site-url: https://vidovics.github.io/Mapping-Open-Research-Networks-OER/
   navbar:
     left:
       - text: "Home"
@@ -41,8 +41,8 @@ website:
 
     right:       
       - icon: github
-        href: https://github.com/${GITHUB_REPOSITORY}
-
+        href: https://github.com/vidovics/Mapping-Open-Research-Networks-OER
+        
 
 format:
   html:
